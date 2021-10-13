@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         'matte-black': "#28282B",
         'gradient-mid': "#1C4D40",
+        'light-gray': "#D2D2D2",
+        'bright-green': '#0FC100'
       },
       fontFamily: {
         'primary-font': ['Prompt', 'Ubuntu', 'Rubik'],
