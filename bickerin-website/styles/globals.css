@@ -12,6 +12,9 @@
   .article-title {
     @apply font-primary-font text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight
   }
+  .article-desc {
+    @apply text-base md:text-xl lg:text-3xl xl:text-2xl md:max-w-xl self-center text-light-gray
+  }
   .reg-button {
     @apply bg-green-500 p-4 px-6 text-white transform duration-500 ease-in-out hover:translate-x-1 hover:-translate-y-1 hover:bg-bright-green
   }

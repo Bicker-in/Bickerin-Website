@@ -12,19 +12,19 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Ubuntu&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Rubik&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
             rel="stylesheet"
           />
           {/* https://fonts.googleapis.com/css2?family=Prompt:wght@200 */}

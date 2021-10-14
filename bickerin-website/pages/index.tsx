@@ -1,16 +1,25 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import AppContainer from '../components/AppContainer'
+import type { NextPage } from 'next';
+import AppContainer from '../components/AppContainer';
+import ArticleSection from '../components/ArticleSection';
 import Button from '../components/Button';
-import styles from '../styles/Home.module.css'
+import textContent from '../website-text-content.json';
 
 const Home: NextPage = () => {
   return (
     <div>
       <AppContainer>
         <main>
-          <article>
+          <ArticleSection
+            title={textContent.mainHomepageTitle}
+            description={textContent.mainHomepageDesc}
+          >
+            <Button>
+              <h3 className="font-primary-font text-lg lg:text-3xl">
+                Sign Up For Beta -&gt;
+              </h3>
+            </Button>
+          </ArticleSection>
+          {/* <article>
             <div className="h-screen flex flex-col items-center justify-center">
               <div className="md:max-w-4xl px-4 flex flex-col gap-6 lg:gap-14">
                 <h2 className="article-title">
@@ -28,7 +37,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </article>
+          </article> */}
         </main>
       </AppContainer>
     </div>
