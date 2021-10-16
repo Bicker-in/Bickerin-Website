@@ -16,6 +16,10 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
+            href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+            rel="stylesheet"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
             rel="stylesheet"
           />
@@ -27,7 +31,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
             rel="stylesheet"
           />
-          {/* https://fonts.googleapis.com/css2?family=Prompt:wght@200 */}
         </Head>
         <body>
           <Main />
