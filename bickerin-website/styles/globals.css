@@ -7,12 +7,21 @@
     @apply shadow-md bg-gray-100 transition duration-500 ease-in-out border-b-8 border-l-8 border-t-2 border-r-2 border-black m-8 p-4 transform hover:-translate-y-2 hover:translate-x-2 hover:shadow-xl hover:bg-white active:bg-green-500 active:text-white
   }
   .title-text {
-    @apply font-primary-font text-white text-2xl md:text-3xl lg:text-4xl
+    @apply font-primary-font text-white text-xl lg:text-2xl
   }
   .article-title {
-    @apply font-primary-font text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight
+    @apply font-primary-font text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal
+  }
+  .article-desc {
+    @apply text-base md:text-xl lg:text-3xl xl:text-2xl md:max-w-xl self-center text-light-gray
   }
   .reg-button {
     @apply bg-green-500 p-4 px-6 text-white transform duration-500 ease-in-out hover:translate-x-1 hover:-translate-y-1 hover:bg-bright-green
+  }
+  .small-button {
+    @apply border-b-2 border-green-500 transform duration-100 py-1 px-2 hover:border-bright-green;
+  }
+  .small-button:hover {
+    border-bottom-width: 4px;
   }
 }

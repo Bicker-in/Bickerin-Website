@@ -1,34 +1,71 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import AppContainer from '../components/AppContainer'
+import type { NextPage } from 'next';
+import Image from 'next/image';
+import AppContainer from '../components/AppContainer';
+import ArticleSection from '../components/ArticleSection';
+import LargeFeatureDescript from '../components/LargeFeatureDescript';
 import Button from '../components/Button';
-import styles from '../styles/Home.module.css'
+import FullScreen from '../components/ShortcutComps/FullScreen';
+import RoadMap from '../components/RoadMap';
+import TeamMembers from '../components/TeamMembers';
+import textContent from '../website-text-content.json';
 
 const Home: NextPage = () => {
   return (
     <div>
       <AppContainer>
-        <main>
-          <article>
-            <div className="h-screen flex flex-col items-center justify-center">
-              <div className="md:max-w-4xl px-4 flex flex-col gap-6 lg:gap-14">
-                <h2 className="article-title">
-                  GitHub, GitLab, Jira, and other dev tools in ONE chat room!
-                </h2>
-                <p className="text-base lg:text-2xl md:max-w-xl self-center text-light-gray">
-                  Bickerin helps you centralize all your team’s important Git Issues, Jira Task deadlines, and other dev tools in shared one chatroom.
-                </p>
-                <div className="self-center">
-                  <Button>
-                    <h3 className="font-primary-font text-lg lg:text-3xl">
-                      Sign Up For Beta -&gt;
-                    </h3>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </article>
+        <main className="flex flex-col gap-10 md:gap-20 lg:gap-30 mb-10">
+          <FullScreen>
+            <ArticleSection
+              title={textContent.mainHomepageTitle}
+              description={textContent.mainHomepageDesc}
+            >
+              <Button>
+                <h3 className="font-primary-font text-lg lg:text-3xl">
+                  Sign Up For Beta -&gt;
+                </h3>
+              </Button>
+            </ArticleSection>
+          </FullScreen>
+
+          <div className="md:hidden">
+            <ArticleSection
+              title={textContent.mobileDescTitle}
+              description={textContent.mobileDescBody}
+              flipped
+            >
+              <Image
+                src="/bickerin_mock.jpg"
+                alt="Bickerin Mock Screenshot"
+                width="480"
+                height="300"
+              />
+            </ArticleSection>
+          </div>
+          <LargeFeatureDescript 
+            title={textContent.desktopChatTitle}
+            desc={textContent.desktopChatDesc}
+          >
+            <Image
+              src="/bicker_chatside_mock.jpg"
+              alt="Bickerin Mock Screenshot"
+              width="762"
+              height="600"
+            />
+          </LargeFeatureDescript>
+          <LargeFeatureDescript 
+            title={textContent.desktopIntegTitle}
+            desc={textContent.desktopIntegDesc}
+            reverse
+          >
+            <Image
+              src="/bicker_integrationside_mock.jpg"
+              alt="Bickerin Mock Screenshot"
+              width="765"
+              height="600"
+            />
+          </LargeFeatureDescript>
+          <RoadMap />
+          <TeamMembers />
         </main>
       </AppContainer>
     </div>

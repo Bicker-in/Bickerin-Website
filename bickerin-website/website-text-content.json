@@ -1,0 +1,57 @@
+{
+  "mainHomepageTitle": "GitHub, GitLab, Jira, and other dev tools in ONE chat room!",
+  "mainHomepageDesc": "Bickerin helps you centralize all your team’s important Git Issues, Jira Task deadlines, and other dev tools in shared one chatroom.",
+  "mobileDescTitle": "Connect with your team and dev tools using one chatroom.",
+  "mobileDescBody": "Be able to chat with your fellow devs while on the same window being able to see recent issues from GitHub and upcoming tasks from Jira. Your whole team can stay informed on the current state of your project without taking their eyes off the chatroom!",
+  "footerDesc": "Bickerin helps you and your team centralize all your dev tools into one chatroom.",
+  "desktopChatTitle": "Chat with your team!",
+  "desktopChatDesc": "Be able to chat with your fellow devs without any of your chat messages being held by any third parties. Using a decentralized database, your team’s important messages will be stored within your team’s own devices. This means your teammates will still be able to message each other even if our servers go out!",
+  "desktopIntegTitle": "Integrate other dev tools into your chatroom!",
+  "desktopIntegDesc": "Right next to your chatroom, devs will be able to see important, up to date information from your team’s various developer tools: GitHub issues, Jira tasks, and much more...",
+  "roadMapMilestonesStatuses": [
+    {
+      "name": "Todo",
+      "color": "bg-blue-600"
+    },
+    {
+      "name": "In Progress",
+      "color": "bg-yellow-500"
+    },
+    {
+      "name": "Released",
+      "color": "bg-bright-green"
+    }
+  ],
+  "roadMapMilestones": [
+    {
+      "name": "Scaffolding",
+      "status": "Todo"
+    },
+    {
+      "name": "Decentralized Messaging",
+      "status": "Todo"
+    },
+    {
+      "name": "GitHub Integration",
+      "status": "Todo"
+    },
+    {
+      "name": "Jira Integration",
+      "status": "Todo"
+    },
+    {
+      "name": "GitLab Integration",
+      "status": "Todo"
+    }
+  ],
+  "teamMembers": [
+    {
+      "name": "Christopher Gunter",
+      "imgURL": "https://avatars.githubusercontent.com/u/22761143?s=96&v=4"
+    },
+    {
+      "name": "Efrain Gonzales",
+      "imgURL": "https://avatars.githubusercontent.com/u/21991598?v=4"
+    }
+  ]
+}
