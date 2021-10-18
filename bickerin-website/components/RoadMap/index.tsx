@@ -13,7 +13,7 @@ interface StatusColorDotProps {
 const StatusColorDot: FunctionComponent<StatusColorDotProps> = (
   {color}
 ) => (
-  <div className={`${color} w-4 h-4 md:w-5 md:h-5 rounded-full`} />
+  <div className={`bg-green-500 w-4 h-4 md:w-5 md:h-5 rounded-full`} />
 );
 
 interface MilestoneStatusItemProps {

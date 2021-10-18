@@ -1,0 +1,11 @@
+.todo-dot-color {
+  background-color: #3385f7;
+}
+
+.inprogress-dot-color {
+  background-color: #ff8b33;
+}
+
+.released-dot-color {
+  background-color: #42ff29;
+}
