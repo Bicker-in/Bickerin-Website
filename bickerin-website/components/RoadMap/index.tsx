@@ -3,28 +3,41 @@ import textContent from '../../website-text-content.json';
 
 const statusColors: {[key: string]: string} = {};
 
+type Statuses = "Todo" | "In Progress" | "Released";
+
 textContent.roadMapMilestonesStatuses.forEach(({name, color}) => {
-  statusColors[name] = color;
+  statusColors[name] = name;
 });
 
 interface StatusColorDotProps {
-  color: string;
+  status: Statuses;
 }
 const StatusColorDot: FunctionComponent<StatusColorDotProps> = (
-  {color}
-) => (
-  <div className={`bg-green-500 w-4 h-4 md:w-5 md:h-5 rounded-full`} />
-);
+  {status}
+) => {
+  console.log(status);
+  switch(status) {
+    case 'Todo':
+      console.log("sad");
+      return <div className="todo-dot-color status-dot-shape" />;
+    case 'In Progress':
+      return <div className="inprogress-dot-color status-dot-shape" />;
+    case 'Released':
+      return <div className="released-dot-color status-dot-shape" />;
+    default:
+      return <div className=" bg-indigo-100 status-dot-shape" />;
+  }
 
+};
+console.log("asd");
 interface MilestoneStatusItemProps {
-  title: string;
-  color: string;
+  title: Statuses;
 }
 const MilestoneStatusItem: FunctionComponent<MilestoneStatusItemProps> = (
-  {title, color}
+  {title}
   ) => (
   <li className="flex flex-row gap-x-2 items-center font-primary-font font-light text-xs md:text-lg lg:text-xl text-white">
-    <StatusColorDot color={color} />
+    <StatusColorDot status={title} />
     {title}
   </li>
 );
@@ -38,7 +51,7 @@ const MilestoneItem: FunctionComponent<MilestoneItemProps> = (
   ) => (
     <li className="bg-matte-black text-white text-lg lg:text-xl rounded-md p-3 flex flex-row items-center gap-x-4">
       {name}
-      <StatusColorDot color={statusColors[status]}/>
+      <StatusColorDot status={status as Statuses}/>
     </li>
 );
 
@@ -50,11 +63,10 @@ const RoadMap: FunctionComponent = () => {
           <h2 className="article-title">Road Map</h2>
         </header>
         <ul className="flex w-full flex-row mt-4 gap-x-2 lg:gap-x-5">
-          {textContent.roadMapMilestonesStatuses.map(({name, color}) => (
+          {textContent.roadMapMilestonesStatuses.map(({name}) => (
             <MilestoneStatusItem 
               key={name} 
-              title={name} 
-              color={color} 
+              title={name as Statuses} 
             />)
           )}
         </ul>     
