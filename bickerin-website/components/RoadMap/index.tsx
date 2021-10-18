@@ -45,7 +45,7 @@ const MilestoneItem: FunctionComponent<MilestoneItemProps> = (
 const RoadMap: FunctionComponent = () => {
   return (
     <article className="flex flex-col items-center">
-      <div className="lg:w-3/4 xl:w-2/4 w-10/12">
+      <div className="lg:w-3/5 xl:w-2/4 w-10/12">
         <header>
           <h2 className="article-title">Road Map</h2>
         </header>

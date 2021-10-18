@@ -5,14 +5,15 @@ import ArticleSection from '../components/ArticleSection';
 import LargeFeatureDescript from '../components/LargeFeatureDescript';
 import Button from '../components/Button';
 import FullScreen from '../components/ShortcutComps/FullScreen';
-import textContent from '../website-text-content.json';
 import RoadMap from '../components/RoadMap';
+import TeamMembers from '../components/TeamMembers';
+import textContent from '../website-text-content.json';
 
 const Home: NextPage = () => {
   return (
     <div>
       <AppContainer>
-        <main className="flex flex-col gap-10 md:gap-20 lg:gap-30">
+        <main className="flex flex-col gap-10 md:gap-20 lg:gap-30 mb-10">
           <FullScreen>
             <ArticleSection
               title={textContent.mainHomepageTitle}
@@ -64,6 +65,7 @@ const Home: NextPage = () => {
             />
           </LargeFeatureDescript>
           <RoadMap />
+          <TeamMembers />
         </main>
       </AppContainer>
     </div>

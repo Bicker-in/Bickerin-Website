@@ -43,5 +43,15 @@
       "name": "GitLab Integration",
       "status": "Todo"
     }
+  ],
+  "teamMembers": [
+    {
+      "name": "Christopher Gunter",
+      "imgURL": "https://avatars.githubusercontent.com/u/22761143?s=96&v=4"
+    },
+    {
+      "name": "Efrain Gonzales",
+      "imgURL": "https://avatars.githubusercontent.com/u/21991598?v=4"
+    }
   ]
 }
