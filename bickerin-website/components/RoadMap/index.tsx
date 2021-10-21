@@ -15,10 +15,8 @@ interface StatusColorDotProps {
 const StatusColorDot: FunctionComponent<StatusColorDotProps> = (
   {status}
 ) => {
-  console.log(status);
   switch(status) {
     case 'Todo':
-      console.log("sad");
       return <div className="todo-dot-color status-dot-shape" />;
     case 'In Progress':
       return <div className="inprogress-dot-color status-dot-shape" />;
@@ -29,7 +27,6 @@ const StatusColorDot: FunctionComponent<StatusColorDotProps> = (
   }
 
 };
-console.log("asd");
 interface MilestoneStatusItemProps {
   title: Statuses;
 }

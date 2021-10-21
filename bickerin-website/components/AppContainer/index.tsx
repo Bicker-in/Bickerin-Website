@@ -5,7 +5,9 @@ import NavBar from '../NavBar';
 const AppContainer: FunctionComponent = ({ children }) => (
   <>
     <NavBar />
-    {children}
+    <main className="min-h-full">
+      {children}
+    </main>
     <Footer />
   </>
 );

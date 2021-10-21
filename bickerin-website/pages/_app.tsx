@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import '../styles/extraColors.css'
+import '../styles/text.css'
+import '../styles/hamburger.css'
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 

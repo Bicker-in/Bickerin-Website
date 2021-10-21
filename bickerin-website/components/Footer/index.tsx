@@ -4,8 +4,8 @@ import textContent from '../../website-text-content.json';
 const currentYear = (new Date(Date.now())).getFullYear()
 
 const Footer: FunctionComponent = () => (
-  <footer className="bg-matte-black h-full">
-    <div className="p-4 lg:p-6 h-full flex flex-col gap-3">
+  <footer className="bg-matte-black">
+    <div className="p-4 lg:p-6 flex flex-col gap-3">
       <div className="flex flex-row gap-4 items-center">
         <div className="bg-green-600 w-12 h-12 sm:w-13 sm:h-13 md:h-14 md:w-14">
           {/* <Image src="/bickerin_logo.svg" alt="BickerinLogo" height="1000" width="200" /> */}
