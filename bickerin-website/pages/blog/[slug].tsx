@@ -1,5 +1,14 @@
+import React from 'react';
 import { NextPage } from 'next';
-import Link from 'next/link';
+import { MDXProvider } from '@mdx-js/react'
+import {unified} from 'unified'
+import remarkParse from 'remark-parse'
+import remarkSlug from 'remark-slug'
+import remarkToc from 'remark-toc'
+import addClasses from 'rehype-add-classes';
+import remarkRehype from 'remark-rehype'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeReact from 'rehype-react'
 import Image from 'next/image';
 import textContent from '../../website-text-content.json';
 import * as matter from 'gray-matter';
@@ -8,6 +17,24 @@ import AppContainer from '../../components/AppContainer';
 import BlogContainer from '../../components/BlogContainer';
 import translateDate from '../../utils/translateDate';
 import { BlogFrontMatterData } from '../../types/pages/blog.d';
+import { FunctionComponent } from 'react';
+
+
+  /* Wrap in Try-Catch */
+  const processor = unified()
+  .use(remarkParse)
+  .use(remarkSlug)
+  .use(remarkToc)
+  .use(remarkRehype)
+  .use(rehypeHighlight)
+  .use(addClasses, {
+    pre: 'hljs',
+    'h1,h2,h3': 'title',
+    h1: 'font-primary-font text-5xl text-white',
+    h2: 'is-2',
+    p: 'one two'
+  })
+  .use(rehypeReact, {createElement: React.createElement});
 
 interface BlogItemData extends BlogFrontMatterData {
   date: string;
@@ -15,9 +42,10 @@ interface BlogItemData extends BlogFrontMatterData {
 };
 
 interface BlogPostProps {
-  blogItemData: BlogItemData
+  blogItemData: BlogItemData,
+  blogContent: string,
 }
-const BlogPost: NextPage<BlogPostProps> = ({blogItemData}) => {
+const BlogPost: NextPage<BlogPostProps> = ({blogItemData, blogContent}) => {
   const {
     title,
     author,
@@ -30,6 +58,17 @@ const BlogPost: NextPage<BlogPostProps> = ({blogItemData}) => {
     day,
     year
   } = translateDate(date as string);
+
+  // Link Code !!!
+  const X = JSON.parse(blogContent, (k, v) => {
+    const matches = v && v.match && v.match(/^\$\$Symbol:(.*)$/);
+  
+    return matches ? Symbol.for(matches[1]) : v;
+  });;
+
+  const Heading1: FunctionComponent = ({children}) => (
+    <h1 className="font-primary-font text-5xl">{children}</h1>
+  );
 
   return (
     <AppContainer>
@@ -46,6 +85,9 @@ const BlogPost: NextPage<BlogPostProps> = ({blogItemData}) => {
           </div>
           <>{author}</>
         </address>
+        <MDXProvider components={{h1: Heading1}}>
+          {X}
+        </MDXProvider>
       </BlogContainer>
     </AppContainer>
   );
@@ -85,9 +127,15 @@ export async function getStaticProps(context: GetStaticBlogPostProps) {
     authorImgURL
   }
 
+  // Link Code !!!
+  const stringifiedBlogContent = JSON.stringify(processor.processSync(content).result, (k, v) =>
+    typeof v === 'symbol' ? `$$Symbol:${Symbol.keyFor(v)}` : v,
+  );
+
   return {
     props: {
-      blogItemData
+      blogItemData,
+      blogContent: stringifiedBlogContent,
     }
   }
 }
