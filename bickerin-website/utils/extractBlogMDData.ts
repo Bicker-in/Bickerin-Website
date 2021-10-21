@@ -1,20 +1,6 @@
 import { readdir, readFile } from 'fs/promises';
 import * as matter from 'gray-matter';
-
-const MONTHS = [
-  'January',
-  'Feburary',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-];
+import translateDate from './translateDate';
 
 const extractBlogMDData = async () => {
   const blogData = [];
@@ -30,13 +16,17 @@ const extractBlogMDData = async () => {
           description
         }
       } = matter.read(`./blog/${file}`);
-      const dateObject = new Date(date);
+      const {
+        month,
+        day,
+        year
+      } = translateDate(date);
       blogData.push({
         slug,
         date: {
-          month: MONTHS[dateObject.getMonth()],
-          day: dateObject.getDate(),
-          year: dateObject.getFullYear()
+          month,
+          day,
+          year 
         },
         title,
         author,

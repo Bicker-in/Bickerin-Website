@@ -12,7 +12,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-          <title>Bicker!n</title>
           <meta name="description" content="Combine all your dev tools into one chatroom." />
           <meta name="keywords" content="Chatroom, GitHub, Jira, Dev, Slack, Discord" />
           <meta name="author" content="Christopher Gunter" />
@@ -37,7 +36,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body>
+        <body className="bg-gradient-mid">
           <Main />
           <NextScript />
         </body>
