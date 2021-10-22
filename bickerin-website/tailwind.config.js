@@ -11,6 +11,7 @@ module.exports = {
       },
       fontFamily: {
         'primary-font': ['Prompt', 'Ubuntu', 'Rubik'],
+        'code-font': ['Roboto Mono', 'Prompt', 'Ubuntu']
       },
     },
   },

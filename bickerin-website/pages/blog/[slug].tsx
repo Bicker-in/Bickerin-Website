@@ -28,11 +28,27 @@ import { FunctionComponent } from 'react';
   .use(remarkRehype)
   .use(rehypeHighlight)
   .use(addClasses, {
-    pre: 'hljs',
-    'h1,h2,h3': 'title',
-    h1: 'font-primary-font text-5xl text-white',
-    h2: 'is-2',
-    p: 'one two'
+    'h1,h2,h3,h4,h5,h6,p,blockquote,ul,ol,em': 'font-primary-font text-white',
+    'h1,h2,h3,h4,h5,h6': 'heading-underline heading-border-bottom',
+    'blockquote,code': 'blog-block-elements',
+    'p,blockquote,li': 'font-light',
+    'ul,ol': 'list-inside my-4 ml-2',
+    h1: 'blog-post-h1',
+    h2: 'blog-post-h2',
+    h3: 'blog-post-h3',
+    h4: 'blog-post-h4',
+    h5: 'blog-post-h5',
+    h6: 'blog-post-h6',
+    p: 'blog-post-p',
+    ol: 'blog-post-ol',
+    ul: 'blog-post-ul',
+    li: 'blog-post-li',
+    pre: 'blog-post-code-pre',
+    blockquote: 'blog-post-blockquote',
+    em: 'italic',
+    strong: 'bold',
+    inlineCode: 'blog-post-inline-code',
+    a: 'blog-post-a'
   })
   .use(rehypeReact, {createElement: React.createElement});
 
@@ -73,7 +89,7 @@ const BlogPost: NextPage<BlogPostProps> = ({blogItemData, blogContent}) => {
   return (
     <AppContainer>
       <BlogContainer>
-        <time className="text-gray-300 text-sm md:text-base lg:text-lg">
+        <time className="text-gray-300 text-sm md:text-base lg:text-lg ">
           {month} {day}, {year}
         </time>
         <header>
@@ -85,9 +101,12 @@ const BlogPost: NextPage<BlogPostProps> = ({blogItemData, blogContent}) => {
           </div>
           <>{author}</>
         </address>
-        <MDXProvider components={{h1: Heading1}}>
+        <div className="border-matte-black border-4 p-4">
+          <blockquote className="text-white border-l-4 border-gray-400 pl-4">
+            sadasd
+          </blockquote>
           {X}
-        </MDXProvider>
+        </div>
       </BlogContainer>
     </AppContainer>
   );
