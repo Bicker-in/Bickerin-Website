@@ -13,13 +13,16 @@ module.exports = {
         'primary-font': ['Prompt', 'Ubuntu', 'Rubik'],
         'code-font': ['Roboto Mono', 'Prompt', 'Ubuntu']
       },
+      transitionProperty: {
+        'max-height': 'max-height',
+      }
     },
   },
   variants: {
     extend: {
       backgroundColor: ['active'],
       textColor: ['active'],
-      borderBottomWidth: ['hover'],
+      borderBottomWidth: ['hover']
     },
   },
   plugins: [],

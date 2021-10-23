@@ -19,9 +19,9 @@ const ArticleSection: FunctionComponent<ArticleSectionProps> = (
 
   return (
     <CenterContent>
-      <div className="md:max-w-4xl px-6 flex flex-col gap-6">
+      <div className="md:max-w-4xl px-6 flex flex-col gap-y-14">
         {flipped && <ExtraComponent />}
-        <article className="flex flex-col gap-4">
+        <article className="flex flex-col gap-4 text-center">
           <header>
             <h2 className="article-title">{title}</h2>
           </header>

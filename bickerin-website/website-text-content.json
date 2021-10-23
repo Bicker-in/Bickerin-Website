@@ -7,6 +7,7 @@
   "desktopChatTitle": "Chat with your team!",
   "desktopChatDesc": "Be able to chat with your fellow devs without any of your chat messages being held by any third parties. Using a decentralized database, your team’s important messages will be stored within your team’s own devices. This means your teammates will still be able to message each other even if our servers go out!",
   "desktopIntegTitle": "Integrate other dev tools into your chatroom!",
+  "navbar": "",
   "desktopIntegDesc": "Right next to your chatroom, devs will be able to see important, up to date information from your team’s various developer tools: GitHub issues, Jira tasks, and much more...",
   "roadMapMilestonesStatuses": [
     {
