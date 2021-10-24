@@ -1,0 +1,17 @@
+.todo-dot-color {
+  background-color: #3385f7;
+}
+
+.inprogress-dot-color {
+  background-color: #ff8b33;
+}
+
+.released-dot-color {
+  background-color: #42ff29;
+}
+
+@layer components {
+  .status-dot-shape {
+    @apply w-4 h-4 md:w-5 md:h-5 rounded-full;
+  }
+}

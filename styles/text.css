@@ -1,0 +1,14 @@
+@layer components {
+  .navbar-item-text {
+    @apply font-primary-font text-white text-xl xl:text-xl font-light;
+  }
+  .title-text {
+    @apply font-primary-font text-white text-xl lg:text-2xl;
+  }
+  .article-title {
+    @apply font-primary-font text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal;
+  }
+  .article-desc {
+    @apply text-base lg:text-lg xl:text-xl md:max-w-xl self-center text-light-gray;
+  }
+}
