@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
 import Link from "next/link";
+import BickerinIcon from "../BickerinIcon";
 
 interface NavItemType {
   name: string;
@@ -30,11 +31,12 @@ const NavBar: FunctionComponent = () => {
     <div className="flex bg-matte-black p-3 flex-col w-full fixed z-30">
       <header className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-x-4">
-          <div className="bg-green-600 w-12 h-12 sm:w-13 sm:h-13">
+          <div className="bg-green-600 w-12 h-12 sm:w-13 sm:h-13 md:h-14 md:w-14">
             {/* <Image src="/bickerin_logo.svg" alt="BickerinLogo" height="1000" width="200" /> */}
+            <BickerinIcon />
           </div>
           <h1 className="title-text font-light">
-            Bicker<b>!n</b>{" "}
+            Bicker<b>!n</b>
           </h1>
         </div>
         <nav>

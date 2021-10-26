@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "prettier-lint": "npx prettier --write ."
+    "prettier-lint": "npx prettier --write .",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -46,7 +47,7 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  }, 
+  },
   "husky": {
     "hooks": {
       "pre-commit": "echo Hello World!"

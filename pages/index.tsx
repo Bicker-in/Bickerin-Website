@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useLayoutEffect, useEffect, useRef } from "react";
 import AppContainer from "../components/AppContainer";
 import ArticleSection from "../components/ArticleSection";
 import LargeFeatureDescript from "../components/LargeFeatureDescript";
@@ -8,6 +9,26 @@ import RoadMap from "../components/RoadMap";
 import textContent from "../website-text-content.json";
 
 const Home: NextPage = () => {
+  // const firstDesktopArticleRef = useRef(null);
+
+  // Sets up the scroll event
+  // useEffect(() => {
+  //   const topPosition =
+  //     firstDesktopArticleRef.current?.getBoundingClientRect?.().top;
+  //   console.log(topPosition);
+  //   console.log("123213213");
+  //   const onScroll = () => {
+  //     const scrollPosition = window.scrollY + window.innerHeight;
+  //     console.log("123");
+  //     if (topPosition < scrollPosition) {
+  //       console.log("sdadas");
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll, false);
+
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
+
   return (
     <div>
       <AppContainer>

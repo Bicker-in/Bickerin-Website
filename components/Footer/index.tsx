@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import textContent from "../../website-text-content.json";
+import BickerinIcon from "../BickerinIcon";
 
 const currentYear = new Date(Date.now()).getFullYear();
 
@@ -9,6 +10,7 @@ const Footer: FunctionComponent = () => (
       <div className="flex flex-row gap-4 items-center">
         <div className="bg-green-600 w-12 h-12 sm:w-13 sm:h-13 md:h-14 md:w-14">
           {/* <Image src="/bickerin_logo.svg" alt="BickerinLogo" height="1000" width="200" /> */}
+          <BickerinIcon />
         </div>
         <h1 className="title-text lg:text-2xl font-light">
           Bicker<b>!n</b>

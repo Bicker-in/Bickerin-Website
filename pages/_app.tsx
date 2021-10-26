@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Bicker!n</title>
       </Head>
-      <div className="overflow-scroll h-screen bg-gradient-to-b from-matte-black via-gradient-mid to-green-600">
+      <div className="bg-gradient-to-b from-matte-black via-gradient-mid to-green-600">
         <Component {...pageProps} />
       </div>
     </>
