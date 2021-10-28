@@ -30,15 +30,14 @@ const NavBar: FunctionComponent = () => {
   return (
     <div className="flex bg-matte-black p-3 flex-col w-full fixed z-30">
       <header className="flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center gap-x-4">
-          <div className="bg-green-600 w-12 h-12 sm:w-13 sm:h-13 md:h-14 md:w-14">
-            {/* <Image src="/bickerin_logo.svg" alt="BickerinLogo" height="1000" width="200" /> */}
+        <Link href="/" passHref>
+          <div className="flex flex-row items-center gap-x-4 cursor-pointer">
             <BickerinIcon />
+            <h1 className="title-text font-light">
+              Bicker<b>!n</b>
+            </h1>
           </div>
-          <h1 className="title-text font-light">
-            Bicker<b>!n</b>
-          </h1>
-        </div>
+        </Link>
         <nav>
           <div className="hidden lg:block">
             {navItems.map(({ name, link }) => (

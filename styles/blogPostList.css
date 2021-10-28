@@ -1,0 +1,5 @@
+@layer components {
+  .blog-post-title {
+    @apply mt-1 pr-1 inline-block font-normal cursor-pointer hover:border-green-500 border-b-2 text-lg md:text-xl lg:text-3xl;
+  }
+}

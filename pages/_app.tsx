@@ -4,6 +4,7 @@ import "../styles/extraColors.css";
 import "../styles/text.css";
 import "../styles/hamburger.css";
 import "../styles/blogPost.css";
+import "../styles/blogPostList.css";
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 
