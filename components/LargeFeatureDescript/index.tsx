@@ -1,5 +1,4 @@
-import React, { FunctionComponent } from "react";
-import Image from "next/image";
+import React, { FunctionComponent } from 'react';
 
 interface LargeFeatureDescriptProps {
   title: string;
@@ -13,9 +12,9 @@ const LargeFeatureDescript: FunctionComponent<LargeFeatureDescriptProps> = ({
   reverse = false,
   children,
 }) => {
-  const rowOrder = reverse ? "flex-row-reverse" : "flex-row";
-  const textSpace = reverse ? "mr-5" : "ml-5";
-  const textAlign = reverse ? "text-right" : "text-left";
+  const rowOrder = reverse ? 'flex-row-reverse' : 'flex-row';
+  const textSpace = reverse ? 'mr-5' : 'ml-5';
+  const textAlign = reverse ? 'text-right' : 'text-left';
 
   return (
     <article
@@ -34,6 +33,10 @@ const LargeFeatureDescript: FunctionComponent<LargeFeatureDescriptProps> = ({
       {children}
     </article>
   );
+};
+
+LargeFeatureDescript.defaultProps = {
+  reverse: false,
 };
 
 export default LargeFeatureDescript;

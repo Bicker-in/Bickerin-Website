@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
 const BlogContainer: FunctionComponent = ({ children }) => (
   <div className="flex flex-row justify-center items-start pt-24">

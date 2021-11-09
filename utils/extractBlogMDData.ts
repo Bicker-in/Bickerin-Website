@@ -1,14 +1,28 @@
-import { readdir, readFile } from "fs/promises";
-import * as matter from "gray-matter";
-import translateDate from "./translateDate";
+import { readdir } from 'fs/promises';
+import * as matter from 'gray-matter';
+import translateDate from './translateDate';
+
+interface BlogPostData {
+  slug: string;
+  date: {
+    month: string;
+    day: number;
+    year: number;
+  };
+  title: string;
+  author: string;
+  description: string;
+}
 
 const extractBlogMDData = async () => {
-  const blogData = [];
+  const blogData: Array<BlogPostData> = [];
   try {
-    const files = await readdir("./blog");
-    for (const file of files) {
+    const files = await readdir('./blog');
+    files.forEach((file) => {
       const {
-        data: { slug, date, title, author, description },
+        data: {
+          slug, date, title, author, description,
+        },
       } = matter.read(`./blog/${file}`);
       const { month, day, year } = translateDate(date);
       blogData.push({
@@ -22,7 +36,7 @@ const extractBlogMDData = async () => {
         author,
         description,
       });
-    }
+    });
   } catch (err) {
     console.error(err);
   }

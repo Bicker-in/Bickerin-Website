@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import CenterContent from "../ShortcutComps/CenterContent";
+import React, { FunctionComponent } from 'react';
+import CenterContent from '../ShortcutComps/CenterContent';
 
 interface ArticleSectionProps {
   title: string;
@@ -31,6 +31,10 @@ const ArticleSection: FunctionComponent<ArticleSectionProps> = ({
       </div>
     </CenterContent>
   );
+};
+
+ArticleSection.defaultProps = {
+  flipped: false,
 };
 
 export default ArticleSection;

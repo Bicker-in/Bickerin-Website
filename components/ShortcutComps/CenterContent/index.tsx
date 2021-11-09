@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
 const CenterContent: FunctionComponent = ({ children }) => (
   <div className="flex flex-col items-center justify-center h-full">

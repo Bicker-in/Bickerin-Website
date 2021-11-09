@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { NextPage } from 'next';
-import {unified} from 'unified'
-import remarkParse from 'remark-parse'
-import remarkSlug from 'remark-slug'
-import remarkToc from 'remark-toc'
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkSlug from 'remark-slug';
+import remarkToc from 'remark-toc';
 import addClasses from 'rehype-add-classes';
-import remarkRehype from 'remark-rehype'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeReact from 'rehype-react'
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeReact from 'rehype-react';
 import * as matter from 'gray-matter';
 import extractBlogMDData from '../../utils/extractBlogMDData';
 import AppContainer from '../../components/AppContainer';
@@ -15,11 +15,11 @@ import BlogContainer from '../../components/BlogContainer';
 import AvatarPic from '../../components/AvatarPic';
 import translateDate from '../../utils/translateDate';
 import { BlogFrontMatterData } from '../../types/pages/blog.d';
+// eslint-disable-next-line import/extensions
 import textContent from '../../website-text-content.json';
 
-
-  /* Wrap in Try-Catch */
-  const processor = unified()
+/* Wrap in Try-Catch */
+const processor = unified()
   .use(remarkParse)
   .use(remarkSlug)
   .use(remarkToc)
@@ -46,49 +46,50 @@ import textContent from '../../website-text-content.json';
     em: 'italic',
     strong: 'bold',
     inlineCode: 'blog-post-inline-code',
-    a: 'blog-post-a'
+    a: 'blog-post-a',
   })
-  .use(rehypeReact, {createElement: React.createElement});
+  .use(rehypeReact, { createElement: React.createElement });
 
 interface BlogItemData extends BlogFrontMatterData {
   date: string;
   authorImgURL: string;
-};
+}
 
 interface BlogPostProps {
   blogItemData: BlogItemData,
   blogContent: string,
 }
-const BlogPost: NextPage<BlogPostProps> = ({blogItemData, blogContent}) => {
+const BlogPost: NextPage<BlogPostProps> = ({ blogItemData, blogContent }) => {
   const {
     title,
     author,
     date,
-    authorImgURL
+    authorImgURL,
   } = blogItemData;
 
   const {
     month,
     day,
-    year
+    year,
   } = translateDate(date as string);
 
   // Link Code !!!
   const X = JSON.parse(blogContent, (k, v) => {
     const matches = v && v.match && v.match(/^\$\$Symbol:(.*)$/);
-  
-    return matches ? Symbol.for(matches[1]) : v;
-  });;
 
-  const Heading1: FunctionComponent = ({children}) => (
-    <h1 className="font-primary-font text-5xl">{children}</h1>
-  );
+    return matches ? Symbol.for(matches[1]) : v;
+  });
 
   return (
     <AppContainer>
       <BlogContainer>
         <time className="text-gray-300 text-sm md:text-base lg:text-lg ">
-          {month} {day}, {year}
+          {month}
+          {' '}
+          {day}
+          ,
+          {' '}
+          {year}
         </time>
         <header>
           <h3 className="article-title text-4xl md:text-5xl lg:text-7xl mt-5 mb-2 font-normal">{title}</h3>
@@ -110,14 +111,12 @@ const BlogPost: NextPage<BlogPostProps> = ({blogItemData, blogContent}) => {
 export async function getStaticPaths() {
   const blogItems = await extractBlogMDData();
 
-  const paths = blogItems.map(({slug}) => {
-    return({
-      params: { slug },
-    });
-  });
+  const paths = blogItems.map(({ slug }) => ({
+    params: { slug },
+  }));
 
-  return {paths, fallback: false};
-};
+  return { paths, fallback: false };
+}
 
 interface GetStaticBlogPostProps {
   params: {
@@ -125,33 +124,31 @@ interface GetStaticBlogPostProps {
   }
 }
 export async function getStaticProps(context: GetStaticBlogPostProps) {
-  const {params: {slug}} = context;
+  const { params: { slug } } = context;
 
   const {
     data,
-    content
+    content,
   } = matter.read(`./blog/${slug}.md`);
 
   const [{
-    imgURL: authorImgURL
-  }] = textContent.teamMembers.filter(({name}) => name === data.author);
+    imgURL: authorImgURL,
+  }] = textContent.teamMembers.filter(({ name }) => name === data.author);
 
   const blogItemData = {
     ...data,
-    authorImgURL
-  }
+    authorImgURL,
+  };
 
   // Link Code !!!
-  const stringifiedBlogContent = JSON.stringify(processor.processSync(content).result, (k, v) =>
-    typeof v === 'symbol' ? `$$Symbol:${Symbol.keyFor(v)}` : v,
-  );
+  const stringifiedBlogContent = JSON.stringify(processor.processSync(content).result, (k, v) => (typeof v === 'symbol' ? `$$Symbol:${Symbol.keyFor(v)}` : v));
 
   return {
     props: {
       blogItemData,
       blogContent: stringifiedBlogContent,
-    }
-  }
+    },
+  };
 }
 
 export default BlogPost;

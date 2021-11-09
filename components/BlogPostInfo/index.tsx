@@ -1,8 +1,9 @@
-import Link from "next/link";
-import React, { FunctionComponent } from "react";
-import textContent from "../../website-text-content.json";
-import { BlogFrontMatterData } from "../../types/pages/blog.d";
-import AvatarPic from "../AvatarPic";
+import Link from 'next/link';
+import React, { FunctionComponent } from 'react';
+import { BlogFrontMatterData } from '../../types/pages/blog.d';
+import AvatarPic from '../AvatarPic';
+// eslint-disable-next-line import/extensions
+import textContent from '../../website-text-content.json';
 
 interface BlogPostInfoProps extends BlogFrontMatterData {
   month: string;
@@ -19,18 +20,22 @@ const BlogPostInfo: FunctionComponent<BlogPostInfoProps> = ({
   author,
   desc,
 }) => {
-  const authorImgURL =
-    textContent.teamMembers.find(({ name }) => name === author)?.imgURL ?? "";
+  const authorImgURL = textContent.teamMembers.find(({ name }) => name === author)?.imgURL ?? '';
 
   return (
     <>
       <time className="text-gray-300 text-sm lg:text-base">
-        {month} {day}, {year}
+        {month}
+        {' '}
+        {day}
+        ,
+        {' '}
+        {year}
       </time>
       <header className="pb-3">
         <Link
           href={{
-            pathname: "/blog/[slug]",
+            pathname: '/blog/[slug]',
             query: { slug },
           }}
           passHref
@@ -49,6 +54,10 @@ const BlogPostInfo: FunctionComponent<BlogPostInfoProps> = ({
       {desc && <p className="text-gray-300 text-xs lg:text-sm mt-2">{desc}</p>}
     </>
   );
+};
+
+BlogPostInfo.defaultProps = {
+  desc: '',
 };
 
 export default BlogPostInfo;

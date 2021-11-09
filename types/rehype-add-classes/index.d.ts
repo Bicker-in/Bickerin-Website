@@ -1,1 +1,1 @@
-declare module "rehype-add-classes";
+declare module 'rehype-add-classes';

@@ -1,11 +1,12 @@
-import React, { FunctionComponent } from "react";
-import textContent from "../../website-text-content.json";
+import React, { FunctionComponent } from 'react';
+// eslint-disable-next-line import/extensions
+import textContent from '../../website-text-content.json';
 
 const statusColors: { [key: string]: string } = {};
 
-type Statuses = "Todo" | "In Progress" | "Released";
+type Statuses = 'Todo' | 'In Progress' | 'Released';
 
-textContent.roadMapMilestonesStatuses.forEach(({ name, color }) => {
+textContent.roadMapMilestonesStatuses.forEach(({ name }) => {
   statusColors[name] = name;
 });
 
@@ -14,11 +15,11 @@ interface StatusColorDotProps {
 }
 const StatusColorDot: FunctionComponent<StatusColorDotProps> = ({ status }) => {
   switch (status) {
-    case "Todo":
+    case 'Todo':
       return <div className="todo-dot-color status-dot-shape" />;
-    case "In Progress":
+    case 'In Progress':
       return <div className="inprogress-dot-color status-dot-shape" />;
-    case "Released":
+    case 'Released':
       return <div className="released-dot-color status-dot-shape" />;
     default:
       return <div className=" bg-indigo-100 status-dot-shape" />;
@@ -50,26 +51,24 @@ const MilestoneItem: FunctionComponent<MilestoneItemProps> = ({
   </li>
 );
 
-const RoadMap: FunctionComponent = () => {
-  return (
-    <article className="flex flex-col items-center">
-      <div className="lg:w-3/5 xl:w-2/4 w-10/12">
-        <header>
-          <h2 className="article-title">Road Map</h2>
-        </header>
-        <ul className="flex w-full flex-row mt-4 gap-x-2 lg:gap-x-5">
-          {textContent.roadMapMilestonesStatuses.map(({ name }) => (
-            <MilestoneStatusItem key={name} title={name as Statuses} />
-          ))}
-        </ul>
-        <ul className="self-start gap-y-2 flex flex-col mt-4">
-          {textContent.roadMapMilestones.map(({ name, status }) => (
-            <MilestoneItem key={name} name={name} status={status} />
-          ))}
-        </ul>
-      </div>
-    </article>
-  );
-};
+const RoadMap: FunctionComponent = () => (
+  <article className="flex flex-col items-center">
+    <div className="lg:w-3/5 xl:w-2/4 w-10/12">
+      <header>
+        <h2 className="article-title">Road Map</h2>
+      </header>
+      <ul className="flex w-full flex-row mt-4 gap-x-2 lg:gap-x-5">
+        {textContent.roadMapMilestonesStatuses.map(({ name }) => (
+          <MilestoneStatusItem key={name} title={name as Statuses} />
+        ))}
+      </ul>
+      <ul className="self-start gap-y-2 flex flex-col mt-4">
+        {textContent.roadMapMilestones.map(({ name, status }) => (
+          <MilestoneItem key={name} name={name} status={status} />
+        ))}
+      </ul>
+    </div>
+  </article>
+);
 
 export default RoadMap;

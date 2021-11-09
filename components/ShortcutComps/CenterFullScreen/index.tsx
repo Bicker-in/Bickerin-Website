@@ -1,14 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
-interface CenterFullScreenProps {
-  vertGap?: "0" | "1" | "5" | "10" | "20";
-}
-const CenterFullScreen: FunctionComponent<CenterFullScreenProps> = ({
-  children,
-  vertGap = "10",
-}) => (
+const CenterFullScreen: FunctionComponent = ({ children }) => (
   <div
-    className={`h-screen flex flex-col justify-center items-center gap-y-${vertGap}`}
+    className="h-screen flex flex-col justify-center items-center gap-y-10"
   >
     {children}
   </div>

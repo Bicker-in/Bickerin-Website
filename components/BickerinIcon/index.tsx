@@ -1,3 +1,5 @@
+import React from 'react';
+
 const BickerinIcon = () => (
   <div className="bg-green-600 w-12 h-12 sm:w-13 sm:h-13 md:h-14 md:w-14 flex flex-row justify-center items-center">
     <svg

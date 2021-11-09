@@ -1,7 +1,5 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
-const Button: FunctionComponent = ({ children }) => {
-  return <button className="reg-button">{children}</button>;
-};
+const Button: FunctionComponent = ({ children }) => <button type="button" className="reg-button">{children}</button>;
 
 export default Button;
