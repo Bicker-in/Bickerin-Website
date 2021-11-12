@@ -31,7 +31,7 @@ const BlogItemContainer: FunctionComponent<BlogItemProps> = ({
   },
 }) => (
   <li>
-    <article className="bg-matte-black text-white p-2 rounded-md font-primary-font font-light">
+    <article className="bg-matte-black text-white p-2 rounded-md font-primary-font font-light my-4">
       <BlogPostInfo
         slug={slug}
         month={month}
@@ -55,7 +55,7 @@ const Blog: NextPage<BlogProps> = ({ blogData }) => (
       <header>
         <h1 className="article-title">Project Blog</h1>
       </header>
-      <ul className="w-full md:w-5/6 lg:w-3/4 mt-4 flex flex-col-reverse gap-y-4">
+      <ul className="w-full md:w-5/6 lg:w-3/4 mt-4 flex flex-col-reverse">
         {blogData.map((blogItemData) => (
           <BlogItemContainer key={blogItemData.slug} blogItemData={blogItemData} />
         ))}
