@@ -55,7 +55,7 @@ const Blog: NextPage<BlogProps> = ({ blogData }) => (
       <header>
         <h1 className="article-title">Project Blog</h1>
       </header>
-      <ul className="w-full md:w-5/6 lg:w-3/4 mt-4 flex flex-col gap-y-4">
+      <ul className="w-full md:w-5/6 lg:w-3/4 mt-4 flex flex-col-reverse gap-y-4">
         {blogData.map((blogItemData) => (
           <BlogItemContainer key={blogItemData.slug} blogItemData={blogItemData} />
         ))}

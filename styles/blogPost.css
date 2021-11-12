@@ -39,7 +39,7 @@
     @apply text-white font-code-font bg-matte-black p-2;
   }
   .blog-block-elements {
-    @apply w-full md:w-4/5 lg:w-3/4 my-4;
+    @apply w-full md:w-4/5 lg:w-3/4 my-4 bg-matte-black p-0.5 rounded-md border-matte-black;
   }
   .heading-underline {
     @apply pb-1 mb-3 border-gray-300;

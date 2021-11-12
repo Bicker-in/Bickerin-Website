@@ -27,11 +27,11 @@ const processor = unified()
   .use(rehypeHighlight)
   .use(addClasses, {
     'h1,h2,h3,h4,h5,h6,p,blockquote,ul,ol,em': 'font-primary-font text-white',
-    'h1,h2,h3,h4,h5,h6': 'heading-underline heading-border-bottom flex flex-row py-2',
+    'h1,h2,h3,h4,h5,h6': 'heading-underline heading-border-bottom flex flex-row py-2 pt-10',
     code: 'blog-block-elements',
     'p,blockquote,li': 'font-light',
     'ul,ol': 'list-inside my-4 ml-2',
-    h1: 'blog-post-h1',
+    h1: 'blog-post-h1 pt-10',
     h2: 'blog-post-h2',
     h3: 'blog-post-h3',
     h4: 'blog-post-h4',

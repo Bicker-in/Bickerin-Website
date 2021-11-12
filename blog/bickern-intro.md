@@ -43,13 +43,9 @@ React is the Javascript library that will be used on both the marketing website 
 
 ### Backend
 
-#### Supabase
+#### Matrix
 
-Supabase is a BaaS (Backend as Service) that includes a Postgres Database, Authentication, instant APIs, and realtime subscriptions. I have chose Supabase for three reasons:
-
-1. **Quicker Development:** Since Supabase is a BaaS, that means all the features needed for a modern application (i.e. Authentication, Database, etc..) are located on one service. This both speeds development and shrinks complexity for the backend of the application.
-2. **Postgres Database:** Since the application is a chat application at its heart with static data messages and the need for quick and accountable data, the application requires a more predictable database like SQL rather than NoSQL.
-3. **Realtime Subscriptions:** One of the most important for any chat application is instant messaging. Once a user sends a message to a chatroom, all users currently on that chatroom should recieve that message immediately. Supabase allows clients subscribe for updates on the database and recieve messaging immediately if a certain part of the database has been changed.
+Matrix is an open network for secure, decentralized communication. Matrix allows messaging with end-to-end encryption.
 
 ---
 
